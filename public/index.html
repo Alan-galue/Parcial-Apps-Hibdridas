@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball API - Documentación</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Banner con Parallax -->
+    <section class="banner-section">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <div class="container">
+                <h1 class="display-2 display-md-3 display-lg-4 fw-bold mb-4 dragon-ball-text">
+                    Dragon Ball API
+                </h1>
+                <p class="lead mb-4">Documentación de la API REST</p>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="bg-dark bg-opacity-50 p-3 p-md-4 rounded">
+                            <h5 class="text-warning mb-3 h5 h6-md">
+                                <i class="bi bi-globe me-2"></i>
+                                Explora el Universo Dragon Ball
+                            </h5>
+                            <p class="mb-0 small small-md">
+                                Gestiona personajes legendarios y planetas del universo más poderoso. 
+                                Una API  para desarrolladores que buscan la fuerza.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal con Parallax -->
+    <section class="parallax-bg">
+        <div class="parallax-overlay"></div>
+        <div class="content-section">
+            <main class="container py-5">
+        <!-- Información General -->
+        <section class="mb-5">
+            <div class="bg-light p-3 p-md-4 rounded shadow-sm">
+                <h2 class="text-center mb-4 h3 h4-md">
+                    <i class="bi bi-info-circle text-primary me-2"></i>
+                    Información General
+                </h2>
+                <div class="row text-center">
+                    <div class="align-items-center ">
+                        <h5 class="text-muted h6 h5-md mb-2">Base URL</h5>
+                        <div class="bg-light p-2 rounded small">http://localhost:5000</div>
+                    </div>
+                </div>
+                <p class="text-muted text-center mb-0 small">
+                    API para gestionar personajes y planetas del universo Dragon Ball
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de Personajes -->
+        <section class="mb-5">
+            <div class="bg-white p-3 p-md-4 rounded shadow-sm">
+                <h2 class="mb-4 h3 h4-md">
+                    <i class="bi bi-person-badge text-danger me-2"></i>
+                    Personajes
+                </h2>
+                <p class="text-muted mb-4 small">Gestiona los personajes del universo Dragon Ball</p>
+                
+                <!-- GET Todos los Personajes -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge get me-3">GET</span>
+                        <strong class="text-primary">/Api/Personajes</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Obtiene todos los personajes</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Respuesta:</small>
+                        <div class="response-box mt-1 small">
+                            Array de objetos con datos de personajes
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GET Personaje por ID -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge get me-3">GET</span>
+                        <strong class="text-primary">/Api/Personajes/:id</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Obtiene un personaje específico</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Respuesta:</small>
+                        <div class="response-box mt-1 small">
+                            Objeto con datos del personaje
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST Crear Personaje -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge post me-3">POST</span>
+                        <strong class="text-primary">/Api/Personajes</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Crea un nuevo personaje</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Campos requeridos:</small>
+                        <div class="response-box mt-1 small">
+                            name, image, description, kiBase, FavoriteFood
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PUT Actualizar Personaje -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge put me-3">PUT</span>
+                        <strong class="text-primary">/Api/Personajes/:id</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Actualiza un personaje existente</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Campos opcionales:</small>
+                        <div class="response-box mt-1 small">
+                            Cualquier campo del personaje
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DELETE Eliminar Personaje -->
+                <div class="bg-light p-3 rounded">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge delete me-3">DELETE</span>
+                        <strong class="text-primary">/Api/Personajes/:id</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Elimina un personaje</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Respuesta:</small>
+                        <div class="response-box mt-1 small">
+                            Mensaje de confirmación
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Planetas -->
+        <section class="mb-5">
+            <div class="bg-white p-3 p-md-4 rounded shadow-sm">
+                <h2 class="mb-4 h3 h4-md">
+                    <i class="bi bi-globe text-info me-2"></i>
+                    Planetas
+                </h2>
+                <p class="text-muted mb-4 small">Explora los planetas del universo Dragon Ball</p>
+                
+                <!-- GET Todos los Planetas -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge get me-3">GET</span>
+                        <strong class="text-primary">/Api/Planetas</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Obtiene todos los planetas</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Respuesta:</small>
+                        <div class="response-box mt-1 small">
+                            Array de objetos con datos de planetas
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GET Planeta por ID -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge get me-3">GET</span>
+                        <strong class="text-primary">/Api/Planetas/:id</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Obtiene un planeta específico</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Respuesta:</small>
+                        <div class="response-box mt-1 small">
+                            Objeto con datos del planeta
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST Crear Planeta -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge post me-3">POST</span>
+                        <strong class="text-primary">/Api/Planetas</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Crea un nuevo planeta</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Campos requeridos:</small>
+                        <div class="response-box mt-1 small">
+                            name, image, description, poblation, color
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PUT Actualizar Planeta -->
+                <div class="endpoint-card get card-hover-effect">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge put me-3">PUT</span>
+                        <strong class="text-primary">/Api/Planetas/:id</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Actualiza un planeta existente</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Campos opcionales:</small>
+                        <div class="response-box mt-1 small">
+                            Cualquier campo del planeta
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DELETE Eliminar Planeta -->
+                <div class="bg-light p-3 rounded">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="method-badge delete me-3">DELETE</span>
+                        <strong class="text-primary">/Api/Planetas/:id</strong>
+                    </div>
+                    <p class="text-muted mb-2 small">Elimina un planeta</p>
+                    <div class="mt-2">
+                        <small class="text-muted">Respuesta:</small>
+                        <div class="response-box mt-1 small">
+                            Mensaje de confirmación
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Códigos de Estado -->
+        <section class="mb-5">
+            <div class="bg-white p-3 p-md-4 rounded shadow-sm">
+                <h2 class="mb-4 h3 h4-md">
+                    <i class="bi bi-exclamation-triangle text-warning me-2"></i>
+                    Códigos de Estado
+                </h2>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <span class="status-code success me-2">200</span>
+                            <span class="text-muted">OK - Petición exitosa</span>
+                        </div>
+                        <div class="mb-3">
+                            <span class="status-code info me-2">201</span>
+                            <span class="text-muted">Created - Recurso creado</span>
+                        </div>
+                        <div class="mb-3">
+                            <span class="status-code warning me-2">400</span>
+                            <span class="text-muted">Bad Request - Datos inválidos</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <span class="status-code danger me-2">401</span>
+                            <span class="text-muted">Unauthorized - No autorizado</span>
+                        </div>
+                        <div class="mb-3">
+                            <span class="status-code danger me-2">404</span>
+                            <span class="text-muted">Not Found - No encontrado</span>
+                        </div>
+                        <div class="mb-3">
+                            <span class="status-code danger me-2">500</span>
+                            <span class="text-muted">Server Error - Error interno</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</main>
+        </div>
+    </section>
+
+    <!-- Footer con Parallax -->
+    <footer class="banner-section py-4">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <h2 class="text-warning mb-2 h6">
+                        <i class="bi bi-lightning-charge me-2"></i>
+                        Dragon Ball API
+                    </h2>
+                    <p class="mb-0 small">API REST</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <div class="small">
+                        <p class="mb-1"><strong>Estudiante:</strong> Galue Maldonado Alan Daniel</p>
+                        <p class="mb-1"><strong>Materia:</strong> Aplicaciones Híbridas</p>
+                        <p class="mb-1"><strong>Docente:</strong> Jonatan Cruz </p>
+                        <p class="mb-0"><strong>Comisión:</strong> DWM4AP</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <p class="mb-0  text-muted bg-white">&copy; 2025 - Parcial 1</p>
+            </div>
+        </div>
+        </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+/* Dragon Ball API - Estilos Parallax y Efectos */
+
+/* ===== EFECTOS PARALLAX ===== */
+.parallax-bg {
+    background-image: url('https://i.pinimg.com/1200x/05/d0/44/05d0448976c6d533213c611e6008ea83.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+
+.parallax-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.banner-section {
+    background-image: url('https://i.pinimg.com/1200x/6e/88/0b/6e880bb9a1aa39af9902826e2f156e29.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.content-section {
+
+    backdrop-filter: blur(10px);
+    margin: -50px 0;
+    position: relative;
+    z-index: 3;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== TIPOGRAFÍA DRAGON BALL ===== */
+.dragon-ball-text {
+    font-family: 'Orbitron', monospace;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes glow {
+    from { 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(255, 193, 7, 0.5); 
+    }
+    to { 
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(255, 193, 7, 0.8); 
+    }
+}
+
+.floating-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ===== EFECTOS DE HOVER ===== */
+.card-hover-effect {
+    transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* ===== BADGES PERSONALIZADOS ===== */
+.method-badge {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.method-badge.get {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.method-badge.post {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.method-badge.put {
+    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+    color: #212529;
+}
+
+.method-badge.delete {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+/* ===== ENDPOINT CARDS ===== */
+.endpoint-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #007bff;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.endpoint-card:hover {
+    background: rgba(255, 255, 255, 1);
+    border-left-color: #ff6b35;
+    transform: translateX(5px);
+}
+
+.endpoint-card.get {
+    border-left-color: #28a745;
+}
+
+.endpoint-card.post {
+    border-left-color: #007bff;
+}
+
+.endpoint-card.put {
+    border-left-color: #ffc107;
+}
+
+.endpoint-card.delete {
+    border-left-color: #dc3545;
+}
+
+/* ===== RESPONSE BOXES ===== */
+.response-box {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    margin-top: 0.5rem;
+}
+
+.response-box.dark {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 1px solid #007bff;
+    color: #00ff88;
+    text-shadow: 0 0 5px rgba(0,255,136,0.3);
+}
+
+/* ===== STATUS CODES ===== */
+.status-code {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    margin: 0.25rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.status-code:hover {
+    transform: scale(1.05);
+}
+
+.status-code.success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.status-code.info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+}
+
+.status-code.warning {
+    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+    color: #212529;
+}
+
+.status-code.danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+/* ===== NAVIGATION EFFECTS ===== */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35, #ffc107);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pulse-effect {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ===== SCROLL EFFECTS ===== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Responsive design manejado completamente por Bootstrap */
+
+/* ===== UTILITY CLASSES ===== */
+.text-glow {
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.bg-gradient-dragon {
+    background: linear-gradient(135deg, #ff6b35 0%, #ffc107 50%, #dc3545 100%);
+}
+
+.shadow-dragon {
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.border-dragon {
+    border: 2px solid #ff6b35;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    .floating-icon,
+    .dragon-ball-text,
+    .pulse-effect,
+    .loading-spinner {
+        animation: none;
+    }
+    
+    .parallax-bg,
+    .banner-section {
+        background-attachment: scroll;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .parallax-bg,
+    .banner-section {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .parallax-overlay,
+    .banner-overlay {
+        display: none;
+    }
+    
+    .content-section {
+        background: white !important;
+        box-shadow: none !important;
+    }
+}
