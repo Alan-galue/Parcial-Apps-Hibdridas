@@ -18,21 +18,7 @@ db.once('open', () => {
 });
 const PORT = process.env.PORT;
 const app = express();
-
-// Middleware para parsear JSON con límite de tamaño
-app.use(express.json({ limit: '10mb' }));
-
-// Middleware para manejar errores de JSON parsing
-app.use((error, req, res, next) => {
-    if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
-        return res.status(400).json({ 
-            error: 'JSON inválido', 
-            message: 'El cuerpo de la petición no contiene JSON válido' 
-        });
-    }
-    next(error);
-});
-
+app.use(express.json())
 app.use('/', express.static('public'));
 APIrouter(app);
 

@@ -13,11 +13,11 @@ import  PersonajeModel from '../models/PersonajeModel.js';
         response.json(Character);
     }
 
-    const FindCharacterID  = async (request, response) => {
+    const FindCharacter = async (request, response) => {
         const id = request.params.id
-        const Character = await PersonajeModel.find(id)
+        const Character = await PersonajeModel.findById(id)
         if(Character){
-            response.status(201).json({msg:"ok", Character})
+            response.status(201).json({"msg":"personajes encontrado", Character})
         }else{
             response.status(401).json({"msg" :" No se encontro el personaje requerido por el ID"})
         }
@@ -48,5 +48,5 @@ import  PersonajeModel from '../models/PersonajeModel.js';
 
     export {
         
-        NewCharacter, CharacterList, FindCharacterID, DeleteCharacter, UpdateCHaracterID
+        NewCharacter, CharacterList, FindCharacter, DeleteCharacter, UpdateCHaracterID
     }
