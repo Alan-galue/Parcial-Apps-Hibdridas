@@ -5,8 +5,12 @@ import PlanetaModel from '../models/PlanetaModel.js'
     const NewPlanet = async (request, response) => {
         const {name, image, description, poblation, color} = request.body
         const Planet = new PlanetaModel({name, image, description, poblation, color})
-        const data= await Planet.save()
-        response.status(201).json({"msg" : "ok", data})
+        if(name){
+            const data= await Planet.save()
+            response.status(201).json({"msg" : "Planeta creado exitosamente!", data})
+        }else{
+            response.status(404).json({"msg":"Por favor rellene el campo correctamente."})
+        }
     }
 
     const ListPlanet = async (request, response) => {
