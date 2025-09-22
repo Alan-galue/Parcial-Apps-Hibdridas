@@ -3,11 +3,23 @@ import mongoose  from 'mongoose';
 const Schema = mongoose.Schema;
 // Creamos el Esquema
 const esquema = new Schema({
-    nombre: String,
-    email: String,
-    password: String,
-    foto: String
-});
+
+        nombre: {
+            type: String,
+            required: [true, 'nombre requerido '],
+            trim: true
+        },
+        email: {
+            type: String,
+            required: [true, 'email requerido'],
+            trim: true
+        },
+        password: {
+            type: String,
+            required: [true, 'contraseña invalida'],
+            trim: true
+        },
+    });
 //   
 const User = mongoose.model('User', esquema);
 
