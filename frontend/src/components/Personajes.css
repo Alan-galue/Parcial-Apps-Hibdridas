@@ -7,14 +7,14 @@
 .personajes-container h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #333;
+    color: #ffff;
 }
 
 .loading {
     text-align: center;
     padding: 40px;
     font-size: 18px;
-    color: #666;
+    color: #ffff;
 }
 
 .personajes-grid {
@@ -51,12 +51,12 @@
 
 .personaje-card h3 {
     margin: 0 0 10px 0;
-    color: #333;
+    color: #ffff;
     font-size: 1.5em;
 }
 
 .description {
-    color: #666;
+    color: #ffff;
     margin-bottom: 15px;
     line-height: 1.5;
 }
@@ -68,11 +68,11 @@
 
 .personaje-info p {
     margin: 8px 0;
-    color: #555;
+    color: #ffff;
 }
 
 .personaje-info strong {
-    color: #333;
+    color: #ffff;
 }
 
 .error-message {
@@ -87,7 +87,7 @@
 .no-data {
     text-align: center;
     padding: 40px;
-    color: #666;
+    color: #ffff;
     font-size: 1.1em;
 }
 
