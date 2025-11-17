@@ -50,7 +50,30 @@ import  PersonajeModel from '../models/PersonajeModel.js';
         }
     }
 
+    const UpgradeCharacter = async (request, response) => {
+        const id = request.params.id;
+        const Character = await PersonajeModel.findById(id);
+        
+        if(Character){
+            const kiActual = Character.kiBase || 0;
+            const nuevoKi = kiActual + 100;
+            
+            const updatedCharacter = await PersonajeModel.findByIdAndUpdate(
+                id, 
+                { kiBase: nuevoKi },
+                { new: true }
+            );
+            
+            response.status(201).json({
+                "msg": "Personaje mejorado",
+                Character: updatedCharacter
+            });
+        }else{
+            response.status(401).json({"msg": "Personaje no encontrado"});
+        }
+    }
+
     export {
         
-        NewCharacter, CharacterList, FindCharacter, DeleteCharacter, UpdateCHaracterID
+        NewCharacter, CharacterList, FindCharacter, DeleteCharacter, UpdateCHaracterID, UpgradeCharacter
     }

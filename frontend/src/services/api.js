@@ -14,13 +14,7 @@ const apiRequest = async (endpoint, options = {}) => {
 
     try {
         const response = await fetch(`${API_URL}${endpoint}`, config);
-        
-        let data;
-        try {
-            data = await response.json();
-        } catch (jsonError) {
-            throw new Error('El servidor no está respondiendo. Verifica que el backend esté corriendo.');
-        }
+        const data = await response.json();
         
         if (!response.ok) {
             throw new Error(data.msg || 'Error en la petición');
@@ -28,9 +22,6 @@ const apiRequest = async (endpoint, options = {}) => {
         
         return data;
     } catch (error) {
-        if (error.message.includes('Failed to fetch') || error.message.includes('ERR_CONNECTION_REFUSED')) {
-            throw new Error('No se pudo conectar con el servidor. Asegúrate de que el backend esté corriendo en el puerto 8000.');
-        }
         throw error;
     }
 };
@@ -59,6 +50,26 @@ export const personajesService = {
     getById: async (id) => {
         return apiRequest(`/api/Personajes/${id}`);
     },
+    
+    create: async (data) => {
+        return apiRequest('/api/Personajes', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        });
+    },
+    
+    update: async (id, data) => {
+        return apiRequest(`/api/Personajes/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+        });
+    },
+    
+    delete: async (id) => {
+        return apiRequest(`/api/Personajes/${id}`, {
+            method: 'DELETE',
+        });
+    },
 };
 
 export const planetasService = {
@@ -68,5 +79,25 @@ export const planetasService = {
     
     getById: async (id) => {
         return apiRequest(`/api/Planetas/${id}`);
+    },
+    
+    create: async (data) => {
+        return apiRequest('/api/Planetas', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        });
+    },
+    
+    update: async (id, data) => {
+        return apiRequest(`/api/Planetas/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+        });
+    },
+    
+    delete: async (id) => {
+        return apiRequest(`/api/Planetas/${id}`, {
+            method: 'DELETE',
+        });
     },
 };
